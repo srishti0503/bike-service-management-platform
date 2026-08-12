@@ -1,0 +1,1193 @@
+/* =========================================
+   ADMIN DASHBOARD
+========================================= */
+
+.admin-dashboard {
+  min-height: 100vh;
+  padding: 45px 55px;
+  background: #f6f8fc;
+  color: #0f172a;
+  font-family: Inter, Arial, sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 38px;
+}
+
+.dashboard-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #2563eb;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.dashboard-header p {
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+
+/* =========================================
+   REFRESH BUTTON
+========================================= */
+
+.refresh-btn {
+  border: none;
+  padding: 14px 22px;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.refresh-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.28);
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 42px;
+}
+
+.stat-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 27px 30px;
+  min-height: 115px;
+
+  background: white;
+  border: 1px solid #e5eaf2;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.045);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.stat-card::after {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  right: -25px;
+  top: -25px;
+
+  background: #eff6ff;
+  border-radius: 50%;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.09);
+}
+
+.stat-card span {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+  margin-bottom: 15px;
+
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stat-card strong {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+
+/* =========================================
+   BOOKINGS SECTION
+========================================= */
+
+.bookings-section {
+  background: white;
+  border: 1px solid #e5eaf2;
+  border-radius: 20px;
+  padding: 30px;
+
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.055);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.section-header span {
+  padding: 9px 15px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   SEARCH + FILTER
+========================================= */
+
+.booking-filters {
+  display: grid;
+  grid-template-columns: 1fr 200px 200px;
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 16px;
+
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+
+  background: #f8fafc;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.search-box:focus-within {
+  background: white;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+.search-box span {
+  font-size: 18px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
+}
+
+.booking-filters select {
+  width: 100%;
+  padding: 14px 15px;
+
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+
+  background: #f8fafc;
+  color: #334155;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  outline: none;
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.booking-filters select:hover,
+.booking-filters select:focus {
+  background: white;
+  border-color: #2563eb;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid #e8edf3;
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+thead {
+  background: #f8fafc;
+}
+
+th {
+  padding: 15px 17px;
+
+  text-align: left;
+
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+
+  border-bottom: 1px solid #e8edf3;
+}
+
+td {
+  padding: 17px;
+
+  color: #334155;
+  font-size: 14px;
+
+  border-bottom: 1px solid #eef2f6;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #f8fbff;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* Customer */
+
+td strong {
+  display: block;
+
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+td small {
+  display: block;
+  margin-top: 5px;
+
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+
+/* =========================================
+   STATUS SELECT
+========================================= */
+
+td select {
+  padding: 8px 10px;
+
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+
+  background: white;
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  outline: none;
+  cursor: pointer;
+}
+
+td select:focus {
+  border-color: #2563eb;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.delete-btn {
+  padding: 8px 13px;
+
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+
+  background: #fff5f5;
+  color: #dc2626;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  color: white;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   LOADING / EMPTY STATE
+========================================= */
+
+.loading {
+  padding: 50px;
+  text-align: center;
+
+  color: #64748b;
+  font-size: 15px;
+}
+
+.empty-state {
+  padding: 60px 20px;
+  text-align: center;
+
+  border: 1px dashed #dbe2ea;
+  border-radius: 14px;
+
+  background: #fafcff;
+}
+
+.empty-state h3 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.empty-state p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .admin-dashboard {
+    padding: 35px 30px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-box {
+    grid-column: 1 / -1;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .admin-dashboard {
+    padding: 25px 16px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 30px;
+  }
+
+  .refresh-btn {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookings-section {
+    padding: 20px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .section-header h2 {
+    font-size: 20px;
+  }
+
+  .booking-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box {
+    grid-column: auto;
+  }
+
+}
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.view-btn {
+  padding: 8px 12px;
+
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.view-btn:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   BOOKING DETAILS MODAL
+========================================= */
+
+.booking-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background: rgba(15, 23, 42, 0.55);
+
+  backdrop-filter: blur(5px);
+
+  z-index: 9999;
+
+  animation: modalFadeIn 0.2s ease;
+}
+
+.booking-details-modal {
+  width: min(680px, 100%);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 20px;
+
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
+
+  animation: modalSlideUp 0.25s ease;
+}
+
+
+/* Modal Header */
+
+.details-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 28px 30px;
+
+  border-bottom: 1px solid #eef2f6;
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.details-modal-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.modal-close-btn {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f1f5f9;
+  color: #475569;
+
+  font-size: 23px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #e2e8f0;
+  transform: rotate(90deg);
+}
+
+
+/* Details Sections */
+
+.details-section {
+  padding: 22px 30px;
+
+  border-bottom: 1px solid #eef2f6;
+}
+
+.details-section h3 {
+  margin: 0 0 17px;
+
+  color: #0f172a;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.detail-item {
+  padding: 14px;
+
+  background: #f8fafc;
+
+  border: 1px solid #edf1f5;
+  border-radius: 10px;
+}
+
+.detail-item span {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-item strong {
+  display: block;
+
+  color: #334155;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.status-value {
+  color: #2563eb !important;
+}
+
+
+/* Notes */
+
+.notes-box {
+  padding: 15px;
+
+  background: #f8fafc;
+
+  border: 1px solid #edf1f5;
+  border-radius: 10px;
+
+  color: #475569;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* Footer */
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 20px 30px;
+}
+
+.modal-done-btn {
+  padding: 11px 22px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.modal-done-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   MOBILE MODAL
+========================================= */
+
+@media (max-width: 650px) {
+
+  .booking-modal-overlay {
+    padding: 15px;
+  }
+
+  .details-modal-header {
+    padding: 22px;
+  }
+
+  .details-section {
+    padding: 20px 22px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-footer {
+    padding: 18px 22px;
+  }
+
+}
+
+/* =========================================
+   STATUS COLORS
+========================================= */
+
+.status-select {
+  border: none;
+  border-radius: 20px;
+  padding: 7px 12px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  outline: none;
+
+  transition: all 0.2s ease;
+}
+
+/* Pending */
+
+.status-pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+/* Confirmed */
+
+.status-confirmed {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+/* In Service */
+
+.status-in-service {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+/* Completed */
+
+.status-completed {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+/* Cancelled */
+
+.status-cancelled {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+
+/* Hover */
+
+.status-select:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   BETTER STAT CARDS
+========================================= */
+
+.stat-card {
+  transition: all 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================
+   TABLE ROW HOVER
+========================================= */
+
+.bookings-section table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.bookings-section table tbody tr:hover {
+  background: #f8fafc;
+}
+
+
+/* =========================================
+   REFRESH BUTTON
+========================================= */
+
+.refresh-btn {
+  transition: all 0.2s ease;
+}
+
+.refresh-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.delete-btn {
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+.search-box {
+  transition: all 0.2s ease;
+}
+
+.search-box:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================
+   FILTER DROPDOWNS
+========================================= */
+
+.booking-filters select {
+  transition: all 0.2s ease;
+}
+
+.booking-filters select:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+/* =========================================
+   EDIT BOOKING MODAL
+========================================= */
+
+.edit-booking-modal {
+  width: min(760px, 94vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 22px;
+  padding: 0;
+}
+
+
+/* Header */
+
+.edit-booking-modal .details-modal-header {
+  padding: 24px 28px;
+  border-bottom: 1px solid #e8e8e8;
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #f8fafc
+  );
+}
+
+
+/* Form */
+
+.edit-booking-form {
+  padding: 26px 28px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+
+/* Form Groups */
+
+.edit-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+
+/* Full width fields */
+
+.edit-form-group:last-of-type {
+  grid-column: 1 / -1;
+}
+
+
+/* Labels */
+
+.edit-form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  letter-spacing: 0.2px;
+}
+
+
+/* Inputs */
+
+.edit-form-group input,
+.edit-form-group select,
+.edit-form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9dee7;
+  border-radius: 11px;
+  padding: 12px 13px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1f2937;
+  background: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+
+/* Textarea */
+
+.edit-form-group textarea {
+  resize: vertical;
+  min-height: 95px;
+}
+
+
+/* Focus Effect */
+
+.edit-form-group input:focus,
+.edit-form-group select:focus,
+.edit-form-group textarea:focus {
+  border-color: #6366f1;
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+
+/* Placeholder */
+
+.edit-form-group input::placeholder,
+.edit-form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+
+/* Buttons Area */
+
+.edit-form-actions {
+  grid-column: 1 / -1;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 12px;
+
+  padding-top: 20px;
+  margin-top: 4px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+
+/* Cancel Button */
+
+.cancel-edit-btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #4b5563;
+
+  padding: 11px 20px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.cancel-edit-btn:hover {
+  background: #f3f4f6;
+  border-color: #bfc4cc;
+}
+
+
+/* Save Button */
+
+.save-edit-btn {
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    #4f46e5,
+    #6366f1
+  );
+
+  color: white;
+
+  padding: 12px 22px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 15px rgba(79, 70, 229, 0.22);
+
+  transition: all 0.2s ease;
+}
+
+
+.save-edit-btn:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(79, 70, 229, 0.30);
+}
+
+
+.save-edit-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.edit-booking-modal::-webkit-scrollbar {
+  width: 7px;
+}
+
+.edit-booking-modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.edit-booking-modal::-webkit-scrollbar-thumb {
+  background: #c7c9d1;
+  border-radius: 10px;
+}
+
+.edit-booking-modal::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .edit-booking-modal {
+    width: 94vw;
+    max-height: 92vh;
+    border-radius: 18px;
+  }
+
+  .edit-booking-form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .edit-form-group:last-of-type {
+    grid-column: auto;
+  }
+
+  .edit-form-actions {
+    grid-column: auto;
+    flex-direction: column-reverse;
+  }
+
+  .cancel-edit-btn,
+  .save-edit-btn {
+    width: 100%;
+  }
+
+}
